@@ -8,7 +8,7 @@ import CardList from './composents/CardList';
 
 function App() {
   const cardData = [
-    { title: 'Compétences', content: 'Développement Web, JavaScript, React, Node.js' },
+    { title: 'SOTOS Coraline', content: 'Développement Web, JavaScript, React, Node.js' },
     { title: 'Expérience', content: '4 ans en développement, gestion de projets' },
     { title: 'Formation', content: 'Master en informatique, diverses certifications' }
   ];
