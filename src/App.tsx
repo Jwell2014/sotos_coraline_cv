@@ -12,10 +12,11 @@ import imgProfil from './assets/coraline_mini.jpg';
 const App: React.FC = () => {
   return (
     <div>
-      <Header />
-      <div className="flex justify-content-between">
-        <Image src={imgProfil} />
+      <div className="flex justify-content-end">
+        <Header />
+
         <CardList items={cardData} />
+        <Image src={imgProfil} />
       </div>
     </div>
   );
