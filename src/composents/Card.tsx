@@ -3,16 +3,18 @@ import { Card as PrimeCard } from 'primereact/card';
 
 interface CardProps {
     title: string;
-    content: string;
+    content: string[];
 }
 
 const Card: React.FC<CardProps> = ({ title, content }) => {
     return (
-        <div className="p-2 flex-1">
+        <div className="p-2">
             <PrimeCard title={title} className="md:w-20rem">
-                <p className="m-0">
-                    {content}
-                </p>
+                <ul className="list-none m-0 p-0">
+                    {content.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
             </PrimeCard>
         </div>
     );
