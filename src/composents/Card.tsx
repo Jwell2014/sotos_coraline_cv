@@ -13,8 +13,8 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, content }) => {
     return (
-        <div className="p-2 flex-1">
-            <PrimeCard title={title} className="md:w-20rem">
+        <div className="p-2">
+            <PrimeCard title={title} className="md:w-15rem">
                 <ul className="m-0">
                     {content.map((item, index) => (
                         <li key={index} className="mb-1">
