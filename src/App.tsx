@@ -1,5 +1,6 @@
 import React from 'react';
 import "primereact/resources/themes/soho-dark/theme.css"
+import "/node_modules/primeflex/primeflex.css"
 import logo from './logo.svg';
 import './App.css';
 
