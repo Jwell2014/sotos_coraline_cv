@@ -8,16 +8,19 @@ import 'primereact/resources/themes/soho-dark/theme.css';  // Thème de PrimeRea
 import 'primereact/resources/primereact.min.css';  // Styles principaux de PrimeReact
 import 'primeflex/primeflex.css';  // PrimeFlex
 import imgProfil from './assets/profilCv.svg';
+import Card from './composents/Card';
 
 const App: React.FC = () => {
   return (
     <div>
-      <div className="flex justify-content-between">
+      <div className="flex justify-content-start">
         <Image className='mr-8 mt-5' src={imgProfil} />
         <Header />
+      </div>
+      <div>
         <CardList items={cardData} />
       </div>
-      <h1>test commit</h1>
+
     </div>
   );
 };

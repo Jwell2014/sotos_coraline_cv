@@ -1,6 +1,5 @@
 // CardList.tsx
 import React from 'react';
-import Card from './Card';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 
 interface CardItem {
@@ -15,7 +14,7 @@ interface CardListProps {
 const CardList: React.FC<CardListProps> = ({ items }) => {
     return (
         <>
-            <div className="card mt-6">
+            <div className="card flex flex-row">
                 {items.map((item, index) => (
                     <Accordion>
                         <AccordionTab
