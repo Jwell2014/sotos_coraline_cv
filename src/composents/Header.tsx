@@ -2,10 +2,10 @@ import React from 'react';
 
 const Header: React.FC = () => {
     return (
-        <header className="flex justify-center items-center h-40 bg-black">
-            <h1 className="text-5xl font-bold text-white">CONCEPTEUR </h1>
-            <h1 className="text-5xl font-bold text-white">full</h1>
-            <h1 className="text-5xl font-bold text-white">stack</h1>
+        <header className="h-40 bg-black">
+            <h1 className="w-80 text-5xl font-bold text-white">CONCEPTEUR DÉVELOPPEUR</h1>
+            <h1 className="text-5xl font-bold text-white">D'APPLICATIONS</h1>
+            <h1 className="text-5xl font-bold text-white">EN ENVIRONNEMENT DevOps</h1>
 
         </header>
     );
