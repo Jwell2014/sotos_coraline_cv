@@ -4,11 +4,12 @@ import Header from './composents/Header';
 import { Image } from 'primereact/image';
 import CardList from './composents/CardList';
 import { cardData } from './data/card';
+import { diplome } from './data/diplome';
 import 'primereact/resources/themes/soho-dark/theme.css';  // Thème de PrimeReact
 import 'primereact/resources/primereact.min.css';  // Styles principaux de PrimeReact
 import 'primeflex/primeflex.css';  // PrimeFlex
 import imgProfil from './assets/profilCv.svg';
-import Card from './composents/Card';
+import TimelineDiplome from './composents/TimelineDiplome';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,10 @@ const App: React.FC = () => {
       <div>
         <CardList items={cardData} />
       </div>
+      <div className='my-6'>
+        <TimelineDiplome items={diplome} />
+      </div>
+
 
     </div>
   );

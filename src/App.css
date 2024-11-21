@@ -28,6 +28,31 @@
   color: #61dafb;
 }
 
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
+.timeline-event {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid #ccc;
+}
+
+.timeline-event::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
