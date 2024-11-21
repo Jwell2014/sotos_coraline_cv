@@ -2,20 +2,25 @@
 export const cardData = [
     {
         title: 'Langages de programmation',
-        content: ['JavaScript', 'Java', 'TypeScript', 'Python'],
+        content: ['JavaScript', 'Java', 'TypeScript', 'Python', 'HTML', 'CSS', 'PHP', 'SQL'],
     },
     {
         title: 'Frameworks et bibliothèques',
-        content: ['React', 'Node.js', 'Next.js', 'Express.js', 'Tailwind CSS'],
+        content: ['React', 'Node.js', 'Next.js', 'Express.js', 'Primereact', 'Primeflex', 'Tailwind CSS', 'Spring Boot', 'Vue.js', 'Symfony'],
     },
     {
-        title: 'Bases de données',
-        content: ['MySQL', 'PostgreSQL', 'MongoDB'],
+        title: 'Bases de données et langages associés',
+        content: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL'],
     },
     {
         title: 'Outils et plateformes',
-        content: ['Git', 'GitHub', 'Docker', 'Postman', 'Swagger'],
+        content: ['Git', 'GitHub', 'Docker', 'Postman', 'Swagger', 'ClickUp', 'Agile (Scrum)'],
     },
+    {
+        title: 'Architectures logicielle et Concepts',
+        content: ['Microservices', 'N-Tier', 'MVC', 'REST API', 'JWT'],
+    },
+
     {
         title: 'Compétences transversales',
         content: [
