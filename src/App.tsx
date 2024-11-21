@@ -14,7 +14,7 @@ const App: React.FC = () => {
   return (
     <div>
       <div className="flex justify-content-start">
-        <Image className='mr-8 mt-5' src={imgProfil} />
+        <Image className='ml-8 mt-5 w-5' src={imgProfil} />
         <Header />
       </div>
       <div>

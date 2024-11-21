@@ -6,13 +6,13 @@ const Header: React.FC = () => {
             <h1 className="m-0 text-8xl font-bold text-white" style={{ letterSpacing: '2rem' }}>
                 CONCEPTEUR
             </h1>
-            <h1 className="m-0 text-8xl font-bold text-white" style={{ letterSpacing: '2rem' }}>
+            <h1 className="m-0 text-8xl font-bold text-white" style={{ letterSpacing: '1.5rem' }}>
                 DÉVELOPPEUR
             </h1>
-            <h1 className="m-0 text-7xl font-bold text-white" style={{ letterSpacing: '2rem' }}>
+            <h1 className="m-0 text-7xl font-bold text-white" style={{ letterSpacing: '1.5rem' }}>
                 D'APPLICATIONS
             </h1>
-            <h1 className="mt-0 text-6xl font-bold text-white" style={{ wordSpacing: '0.5rem', letterSpacing: '0.5rem' }}>
+            <h1 className="mt-2 text-6xl font-bold text-white" style={{ wordSpacing: '0.5rem', letterSpacing: '0.5rem' }}>
                 EN ENVIRONNEMENT DEVOPS
             </h1>
         </header >
