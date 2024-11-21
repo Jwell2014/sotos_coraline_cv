@@ -13,10 +13,9 @@ const App: React.FC = () => {
   return (
     <div>
       <div className="flex justify-content-between">
+        <Image className='mr-8 mt-5' src={imgProfil} />
         <Header />
-
         <CardList items={cardData} />
-        <Image className='mr-8' src={imgProfil} />
       </div>
       <h1>test commit</h1>
     </div>

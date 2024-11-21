@@ -15,7 +15,7 @@ interface CardListProps {
 const CardList: React.FC<CardListProps> = ({ items }) => {
     return (
         <>
-            <div className="card">
+            <div className="card mt-6">
                 {items.map((item, index) => (
                     <Accordion>
                         <AccordionTab
