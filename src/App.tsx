@@ -14,8 +14,7 @@ import TimelineDiplome from './composents/TimelineDiplome';
 const App: React.FC = () => {
   return (
     <div>
-      <div className="flex justify-content-start">
-        <Image className='ml-8 mt-5 w-5' src={imgProfil} />
+      <div>
         <Header />
       </div>
       <div>

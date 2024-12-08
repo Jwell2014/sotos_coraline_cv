@@ -14,9 +14,9 @@ interface CardListProps {
 const CardList: React.FC<CardListProps> = ({ items }) => {
     return (
         <>
-            <div className="card flex flex-row">
+            <div className="card flex flex-row w-full">
                 {items.map((item, index) => (
-                    <Accordion>
+                    <Accordion key={index} className="w-full">
                         <AccordionTab
                             header={
                                 <span className="flex align-items-center gap-2 w-full">
@@ -34,7 +34,6 @@ const CardList: React.FC<CardListProps> = ({ items }) => {
                         </AccordionTab>
                     </Accordion>
                 ))}
-
             </div>
         </>
     );
