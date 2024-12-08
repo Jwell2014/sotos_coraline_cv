@@ -1,13 +1,16 @@
 import React from 'react';
 import { Image } from 'primereact/image';
 import imgProfil from '../assets/profilCv.svg';
+import Button from './Button';
 
 
 const Header: React.FC = () => {
     return (
         <div className="flex justify-content-start">
-            <Image className='ml-8 mt-5 w-5' src={imgProfil} />
-
+            <div className='m-auto pr-8 text-center'>
+                <Image src={imgProfil} />
+                <Button label='Télécharger le CV' onClick={() => window.open('https://www.google.com', '_blank')} />
+            </div>
             <header className="flex flex-column justify-content-start w-screen">
                 <h1 className="m-0 text-8xl font-bold text-white" style={{ letterSpacing: '2rem' }}>
                     CONCEPTEUR
