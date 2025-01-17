@@ -2,14 +2,12 @@
 import React from 'react';
 import { Timeline } from 'primereact/timeline';
 import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
 
 interface DiplomeItem {
     status?: string;
     date?: string;
     icon?: string;
     color?: string;
-    image?: string;
 }
 
 interface TimelineDiplomeProps {
@@ -29,10 +27,7 @@ const TimelineDiplome: React.FC<TimelineDiplomeProps> = ({ items }) => {
     const customizedContent = (item: DiplomeItem) => {
         return (
             <Card title={item.status} subTitle={item.date}>
-                {item.image && <img src={`https://primefaces.org/cdn/primereact/images/product/${item.image}`} alt={item.image} width={200} className="shadow-1" />}
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-                    quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
-                <Button label="Read more" className="p-button-text"></Button>
+                {item.icon && <i className={item.icon}></i>}
             </Card>
         );
     };

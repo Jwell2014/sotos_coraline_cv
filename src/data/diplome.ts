@@ -4,14 +4,14 @@ export const diplome = [
         date: "Mars 2023 - Septembre 2024",
         organization: "Simplon.co",
         equivalent: "Équivalent : BAC +4",
-        icon: "pi pi-briefcase",
+        icon: "pi pi-graduation-cap",
         color: "#2196F3",
     },
     {
         status: "Certification DevOps",
         date: "2024",
         organization: "Simplon.co",
-        icon: "pi pi-certificate",
+        icon: "pi pi-book",
         color: "#4CAF50",
     },
     {
@@ -35,7 +35,7 @@ export const diplome = [
         date: "Septembre 2016 - Juin 2018",
         organization: "UCPA",
         equivalent: "Équivalent : BAC +2",
-        icon: "pi pi-music",
+        icon: "pi pi-star",
         color: "#673AB7",
     },
     {
