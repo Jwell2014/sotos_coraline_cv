@@ -1,7 +1,30 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box; /* Assure que les bordures/paddings sont inclus dans les dimensions */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 .App {
   text-align: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; /* Supprime les marges par défaut pour éviter les débordements */
+  word-wrap: break-word; /* Force les mots longs à se diviser */
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Supprime les styles par défaut des listes */
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
