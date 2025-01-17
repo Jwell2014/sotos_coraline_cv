@@ -5,11 +5,20 @@ import Button from './Button';
 
 
 const Header: React.FC = () => {
+
+    const downloadCv = () => {
+        const link = document.createElement('a');
+        link.href = '/SOTOSCoralineCv.pdf';
+        link.download = 'SOTOSCoralineCv.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
     return (
         <div className="flex justify-content-start">
             <div className='m-auto pr-8 text-center'>
                 <Image src={imgProfil} />
-                <Button label='Télécharger le CV' onClick={() => window.open('https://www.google.com', '_blank')} />
+                <Button icon="pi pi-upload" classElem='bg-gray-900 mt-4 py-2 px-3' label='Télécharger le CV' onClick={downloadCv} />
             </div>
             <header className="flex flex-column justify-content-start w-screen">
                 <h1 className="m-0 text-8xl font-bold text-white" style={{ letterSpacing: '2rem' }}>
@@ -24,10 +33,12 @@ const Header: React.FC = () => {
                 <h1 className="mt-2 text-6xl font-bold text-white" style={{ wordSpacing: '0.5rem', letterSpacing: '0.5rem' }}>
                     EN ENVIRONNEMENT DEVOPS
                 </h1>
-            </header >
+            </header>
         </div>
 
     );
-};
+
+}
+
 
 export default Header;

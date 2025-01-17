@@ -9,7 +9,6 @@ import 'primereact/resources/primereact.min.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 import TimelineDiplome from './composents/TimelineDiplome';
-import Button from './composents/Button';
 
 const App: React.FC = () => {
   return (
@@ -21,7 +20,6 @@ const App: React.FC = () => {
         <CardList items={cardData} />
       </div>
       <div className='my-6'>
-        <Button label='Télécharger le CV' onClick={() => window.open('https://www.google.com', '_blank')} />
         <TimelineDiplome items={diplome} />
       </div>
     </div>
