@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'primereact/image';
 import imgProfil from '../assets/profilCv.svg';
-import Button from './Button';
+import SelectedButton from './Button';
 
 
 const Header: React.FC = () => {
@@ -19,9 +19,9 @@ const Header: React.FC = () => {
             {/* Section de gauche : Image et bouton */}
             <div className="flex flex-column align-items-center mb-6 md:mb-0 md:pr-6">
                 <Image src={imgProfil} className="max-w-full h-auto" alt="Profil" />
-                <Button
+                <SelectedButton
                     icon="pi pi-upload"
-                    classElem="bg-gray-900 mt-4 py-2 px-3"
+                    classElem="mt-4"
                     label="Télécharger le CV"
                     onClick={downloadCv}
                 />

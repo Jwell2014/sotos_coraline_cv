@@ -9,8 +9,15 @@ import 'primereact/resources/primereact.min.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 import TimelineDiplome from './composents/TimelineDiplome';
+import SelectedButton from './composents/Button';
 
 const App: React.FC = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const onClickSelectButton = (e: { target: { value: string; }; }) => {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <div>
       <div>
@@ -19,7 +26,13 @@ const App: React.FC = () => {
       <div>
         <CardList items={cardData} />
       </div>
-      <div className='my-6'>
+      <div className='my-6 flex justify-content-center'>
+        <SelectedButton classElem='mx-5' icon='pi pi-graduation-cap' label='Diplômes & Formations' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
+        <SelectedButton classElem='mx-5' icon='pi pi-briefcase' label='Expériences Professionnelles' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
+        <SelectedButton classElem='mx-5' icon='pi pi-plus-circle' label='En Savoir Plus' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
+
+      </div>
+      <div className={isOpen ? "" : "hidden"} >
         <TimelineDiplome items={diplome} />
       </div>
     </div>
