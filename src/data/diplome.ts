@@ -1,9 +1,20 @@
-export const diplome = [
+export interface Diplome {
+    status: string;
+    date: string;
+    organization: string;
+    equivalent?: string; // Champ optionnel
+    description?: string[];
+    achievement?: string; // Champ optionnel
+    icon: string;
+    color: string;
+}
+
+export const diplomes: Diplome[] = [
     {
         status: "Titre Professionnel Concepteur Développeur d'Applications",
         date: "Mars 2023 - Septembre 2024",
         organization: "Simplon.co",
-        equivalent: "Équivalent : BAC +4",
+        equivalent: "Équivalent : BAC +4 / Licence",
         icon: "pi pi-graduation-cap",
         color: "#2196F3",
     },
@@ -18,7 +29,7 @@ export const diplome = [
         status: "Titre Professionnel Développeur Web et Web Mobile",
         date: "Septembre 2021 - Juin 2022",
         organization: "Human Booster",
-        equivalent: "Équivalent : BAC +2",
+        equivalent: "Équivalent : BAC +2 / Brevet Fédéral",
         icon: "pi pi-code",
         color: "#FFC107",
     },
@@ -26,7 +37,7 @@ export const diplome = [
         status: "Formations en ligne",
         date: "Depuis Novembre 2020",
         organization: "OpenClassrooms",
-        description: "HTML, CSS, JavaScript, Cybersécurité",
+        description: ["HTML, CSS, JavaScript, Cybersécurité", "Développeur d'Applications", "Développeur Web"],
         icon: "pi pi-desktop",
         color: "#FF5722",
     },
@@ -34,7 +45,7 @@ export const diplome = [
         status: "BTS Animateur Musical et Scénique",
         date: "Septembre 2016 - Juin 2018",
         organization: "UCPA",
-        equivalent: "Équivalent : BAC +2",
+        equivalent: "Équivalent : BAC +2 / Brevet Féderal",
         icon: "pi pi-star",
         color: "#673AB7",
     },

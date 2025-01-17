@@ -24,7 +24,7 @@ const CardList: React.FC<CardListProps> = ({ items }) => {
                             maxWidth: 'calc(25% - 0.5rem)', // Fixe une largeur maximale à 25%
                         }}
                     >
-                        <div className="p-2 bg-primary font-bold border-round">
+                        <div className="p-1 bg-primary font-bold border-round">
                             <Accordion>
                                 <AccordionTab
                                     header={
@@ -58,7 +58,7 @@ const CardList: React.FC<CardListProps> = ({ items }) => {
                             maxWidth: 'calc(25% - 0.5rem)',
                         }}
                     >
-                        <div className="p-2 bg-primary font-bold border-round">
+                        <div className="p-1 bg-primary font-bold border-round">
                             <Accordion>
                                 <AccordionTab
                                     header={
@@ -89,7 +89,7 @@ const CardList: React.FC<CardListProps> = ({ items }) => {
                             maxWidth: 'calc(75% - 0.5rem)',
                         }}
                     >
-                        <div className="p-2 bg-primary font-bold border-round">
+                        <div className="p-1 bg-primary font-bold border-round">
                             <Accordion>
                                 <AccordionTab
                                     header={

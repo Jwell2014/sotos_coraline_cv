@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/App.css';
 import Header from './composents/Header';
 import CardList from './composents/CardList';
 import { cardData } from './data/card';
-import { diplome } from './data/diplome';
+import { diplomes } from './data/diplome';
+import { experiences } from './data/experience';
 import 'primereact/resources/themes/soho-dark/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeflex/primeflex.css';
@@ -12,10 +13,19 @@ import TimelineDiplome from './composents/TimelineDiplome';
 import SelectedButton from './composents/Button';
 
 const App: React.FC = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [items, setItems] = useState([{}]);
 
   const onClickSelectButton = (e: { target: { value: string; }; }) => {
-    setIsOpen(!isOpen);
+    if (e.target.value === "Diplômes & Formations") {
+      setIsOpen(true);
+      setItems(diplomes);
+    } else if (e.target.value === "Expériences Professionnelles") {
+      setIsOpen(true);
+      setItems(experiences);
+    } else {
+      setItems([{}]);
+    }
   }
 
   return (
@@ -33,7 +43,7 @@ const App: React.FC = () => {
 
       </div>
       <div className={isOpen ? "" : "hidden"} >
-        <TimelineDiplome items={diplome} />
+        <TimelineDiplome items={items} />
       </div>
     </div>
   );
