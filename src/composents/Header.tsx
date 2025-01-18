@@ -41,9 +41,9 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                 />
             </div>
 
-            {/* Section de droite : Titre */}
-            <div className="flex flex-column justify-content-start align-items-start text-start w-full">
-                <header className="flex flex-column justify-content-start align-items-start text-start w-full mb-7">
+            {/* Section de droite : Titre + bouton */}
+            <div className="flex flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-startw-full">
+                <header className="flex flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-start w-full mb-7">
                     <h1
                         className="m-0 text-5xl md:text-7xl font-bold text-white break-words w-full"
                         style={{
@@ -72,11 +72,27 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                     </h1>
 
                 </header>
-                <div className='mt-8 flex flex-wrap justify-content-center gap-3'>
-                    <SelectedButton classElem='mx-5' icon='pi pi-graduation-cap' label='Diplômes & Formations' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
-                    <SelectedButton classElem='mx-5' icon='pi pi-briefcase' label='Expériences Professionnelles' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
-                    <SelectedButton classElem='mx-5' icon='pi pi-plus-circle' label='En Savoir Plus' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
+                <div className="mt-8 flex flex-wrap justify-content-around gap-3 w-full">
+                    <SelectedButton
+                        classElem="flex-grow-1 sm:w-auto w-full"
+                        icon="pi pi-graduation-cap"
+                        label="Diplômes & Formations"
+                        onClick={(event: { target: { value: string } }) => onClickSelectButton(event)}
+                    />
+                    <SelectedButton
+                        classElem="flex-grow-1 sm:w-auto w-full"
+                        icon="pi pi-briefcase"
+                        label="Expériences Professionnelles"
+                        onClick={(event: { target: { value: string } }) => onClickSelectButton(event)}
+                    />
+                    <SelectedButton
+                        classElem="flex-grow-1 sm:w-auto w-full"
+                        icon="pi pi-plus-circle"
+                        label="En Savoir Plus"
+                        onClick={(event: { target: { value: string } }) => onClickSelectButton(event)}
+                    />
                 </div>
+
             </div>
         </div>
     );

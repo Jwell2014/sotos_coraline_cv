@@ -59,11 +59,27 @@ const App: React.FC = () => {
       <div className='px-4 py-6'>
         <CardList items={cardData} />
       </div>
-      <div className="flex flex-wrap justify-content-center gap-3">
-        <SelectedButton icon="pi pi-linkedin" classElem="mt-5" label="LinKedin" onClick={() => window.open('https://www.linkedin.com/in/coraline-sotos-72bb7512a/', '_blank')} />
-        <SelectedButton icon="pi pi-github" classElem="mt-5" label="GitHub" onClick={() => window.open('https://github.com/Jwell2014', '_blank')} />
-        <SelectedButton icon="pi pi-folder" classElem="mt-5" label="PorteFolio" onClick={() => setVisible(true)} />
+      <div className="flex flex-wrap justify-content-center gap-3 mx-4">
+        <SelectedButton
+          icon="pi pi-linkedin"
+          classElem="flex-grow-1 sm:w-auto w-full mt-5"
+          label="LinkedIn"
+          onClick={() => window.open('https://www.linkedin.com/in/coraline-sotos-72bb7512a/', '_blank')}
+        />
+        <SelectedButton
+          icon="pi pi-github"
+          classElem="flex-grow-1 sm:w-auto w-full mt-5"
+          label="GitHub"
+          onClick={() => window.open('https://github.com/Jwell2014', '_blank')}
+        />
+        <SelectedButton
+          icon="pi pi-folder"
+          classElem="flex-grow-1 sm:w-auto w-full mt-5"
+          label="PorteFolio"
+          onClick={() => setVisible(true)}
+        />
       </div>
+
       <div className="grid">
         <Dialog header="✨ Mon Portfolio est en Construction ! ✨" visible={visible} style={{ width: '60vw' }} onHide={() => { if (!visible) return; setVisible(false); }}>
           <p className="m-0">
