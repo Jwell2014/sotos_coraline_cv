@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
     }
 
     return (
-        <div className="flex flex-column md:flex-row justify-content-center align-items-center px-4 py-6">
+        <div className="flex flex-column md:flex-row justify-content-around align-items-center px-4 py-6">
             {/* Section de gauche : Image et bouton */}
             <div className="flex flex-column align-items-center mb-6 md:mb-0 md:pr-6">
                 <Image src={imgProfil} className="max-w-full h-auto" alt="Profil" />
