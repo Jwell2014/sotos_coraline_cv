@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/App.css';
 import Header from './composents/Header';
 import CardList from './composents/CardList';
@@ -10,40 +10,52 @@ import 'primereact/resources/primereact.min.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 import TimelineDiplome from './composents/TimelineDiplome';
-import SelectedButton from './composents/Button';
+import { Button } from 'primereact/button';
 
 const App: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(Boolean);
   const [items, setItems] = useState([{}]);
+  const [onClickValue, setOnClickValue] = useState("");
+  console.log("ok" + onClickValue);
+  console.log("ok" + isOpen);
 
-  const onClickSelectButton = (e: { target: { value: string; }; }) => {
-    if (e.target.value === "Diplômes & Formations") {
+
+
+  // Contrôler les changements liés à onClickValue
+  useEffect(() => {
+    if (onClickValue === "Diplômes & Formations") {
       setIsOpen(true);
       setItems(diplomes);
-    } else if (e.target.value === "Expériences Professionnelles") {
+    } else if (onClickValue === "Expériences Professionnelles") {
       setIsOpen(true);
       setItems(experiences);
-    } else {
+    } else if (onClickValue === "En Savoir Plus") {
+      setIsOpen(true);
       setItems([{}]);
+    } else {
+      setIsOpen(false);
     }
-  }
+  }, [onClickValue]);
+
+  const handleClose = () => {
+    setIsOpen(false);
+    setOnClickValue(""); // Réinitialise onClickValue pour permettre un reclique
+  };
 
   return (
     <div>
       <div>
-        <Header />
-      </div>
-      <div>
-        <CardList items={cardData} />
-      </div>
-      <div className='my-6 flex justify-content-center'>
-        <SelectedButton classElem='mx-5' icon='pi pi-graduation-cap' label='Diplômes & Formations' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
-        <SelectedButton classElem='mx-5' icon='pi pi-briefcase' label='Expériences Professionnelles' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
-        <SelectedButton classElem='mx-5' icon='pi pi-plus-circle' label='En Savoir Plus' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
+        <Header onClickValue={setOnClickValue} />
 
       </div>
       <div className={isOpen ? "" : "hidden"} >
+        <div className="flex justify-content-end  mb-3 px-4 py-2">
+          <Button icon="pi pi-times" rounded outlined severity="danger" aria-label="Cancel" onClick={handleClose} />
+        </div>
         <TimelineDiplome items={items} />
+      </div>
+      <div>
+        <CardList items={cardData} />
       </div>
     </div>
   );

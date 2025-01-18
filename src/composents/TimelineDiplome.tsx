@@ -31,6 +31,7 @@ const TimelineDiplome: React.FC<TimelineDiplomeProps> = ({ items }) => {
 
     const customizedContent = (item: Item) => {
         return (
+
             <Card title={item.status ? item.status : item.poste} subTitle={item.date}>
                 {item.icon && <i className={item.icon}></i>}
                 {item.entreprise && <p className='font-bold'>{item.entreprise}</p>}
@@ -60,7 +61,7 @@ const TimelineDiplome: React.FC<TimelineDiplomeProps> = ({ items }) => {
     };
 
     return (
-        <div className="card">
+        <div className="card mb-8">
             <Timeline value={items} align="alternate" className="customized-timeline" marker={customizedMarker} content={customizedContent} />
         </div>
     )
