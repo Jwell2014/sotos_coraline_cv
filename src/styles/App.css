@@ -18,7 +18,6 @@ html, body {
 ul {
   padding: 0;
   margin: 0;
-  list-style: none; /* Supprime les styles par défaut des listes */
 }
 .App-header {
   background-color: #282c34;
