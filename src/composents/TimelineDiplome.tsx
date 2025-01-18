@@ -32,7 +32,7 @@ const TimelineDiplome: React.FC<TimelineDiplomeProps> = ({ items }) => {
     const customizedContent = (item: Item) => {
         return (
 
-            <Card title={item.status ? item.status : item.poste} subTitle={item.date}>
+            <Card className='border-3' style={{ borderColor: item.color }} title={item.status ? item.status : item.poste} subTitle={item.date}>
                 {item.icon && <i className={item.icon}></i>}
                 {item.entreprise && <p className='font-bold'>{item.entreprise}</p>}
 
