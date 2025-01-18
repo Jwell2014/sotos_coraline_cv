@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                     </h1>
 
                 </header>
-                <div className='mt-8 flex justify-content-center'>
+                <div className='mt-8 flex flex-wrap justify-content-center gap-3'>
                     <SelectedButton classElem='mx-5' icon='pi pi-graduation-cap' label='Diplômes & Formations' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
                     <SelectedButton classElem='mx-5' icon='pi pi-briefcase' label='Expériences Professionnelles' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
                     <SelectedButton classElem='mx-5' icon='pi pi-plus-circle' label='En Savoir Plus' onClick={(event: { target: { value: string; }; }) => onClickSelectButton(event)} />
