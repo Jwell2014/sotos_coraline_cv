@@ -117,11 +117,6 @@ const App: React.FC = () => {
               </Fieldset>
             </div>
           </div>
-
-
-
-
-
         </>
       )
       }
