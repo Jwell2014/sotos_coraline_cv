@@ -129,7 +129,7 @@ const App: React.FC = () => {
       <div className='px-4 py-6'>
         <CardList items={cardData} />
       </div>
-      <div className="flex flex-wrap justify-content-center gap-3 mx-4">
+      <div className="flex flex-wrap justify-content-center gap-3 mx-4 mb-6">
         <SelectedButton
           icon="pi pi-linkedin"
           classElem="flex-grow-1 sm:w-auto w-full mt-5"
