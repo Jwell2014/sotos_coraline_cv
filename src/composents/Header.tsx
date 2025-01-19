@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
     return (
         <div className="flex flex-column md:flex-row justify-content-around align-items-center px-4 py-6">
             {/* Section de gauche : Image et bouton */}
-            <div className="flex flex-column align-items-center mb-6 md:mb-0 md:pr-6">
+            <div className="flex flex-column align-items-center mb-3 md:mb-0 md:pr-6">
                 <Image src={imgProfil} className="max-w-full h-auto mt-4" alt="Profil" />
                 {!isSmallScreen && (
                     <SelectedButton
@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
             </div>
 
             {/* Section de droite : Titre + bouton */}
-            <div className="flex -mt-6 flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-start w-full">
+            <div className="flex flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-start w-full">
                 <header className="flex flex-column justify-content-start align-items-start w-full mb-8 md:justify-content-start md:align-items-start md:text-start">
                     <h1
                         className="m-0 text-5xl md:text-7xl font-bold text-white break-words w-full"
@@ -87,8 +87,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                         onClick={() => console.log("Téléchargement...")}
                     />
                 )}
-                <div className='mt-4'></div>
-                <div className="mt-8 flex flex-wrap justify-content-around gap-3 w-full">
+                <div className="mt-7 flex flex-wrap justify-content-around gap-3 w-full">
                     <SelectedButton
                         classElem="flex-grow-1 sm:w-auto w-full toggle"
                         icon="pi pi-graduation-cap"
