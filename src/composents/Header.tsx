@@ -2,12 +2,16 @@ import React from 'react';
 import { Image } from 'primereact/image';
 import imgProfil from '../assets/profilCv.svg';
 import SelectedButton from './Button';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 interface HeaderProps {
     onClickValue: React.Dispatch<React.SetStateAction<string>>
 }
 
 const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
+    const isSmallScreen = useMediaQuery('(max-width: 768px)');
+
+
     const downloadCv = () => {
         const link = document.createElement('a');
         link.href = '/SOTOSCoralineCv.pdf';
@@ -33,16 +37,18 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
             {/* Section de gauche : Image et bouton */}
             <div className="flex flex-column align-items-center mb-6 md:mb-0 md:pr-6">
                 <Image src={imgProfil} className="max-w-full h-auto" alt="Profil" />
-                <SelectedButton
-                    icon="pi pi-upload"
-                    classElem="mt-5"
-                    label="Télécharger le CV"
-                    onClick={downloadCv}
-                />
+                {!isSmallScreen && (
+                    <SelectedButton
+                        icon="pi pi-upload"
+                        classElem="mt-4"
+                        label="Télécharger le CV"
+                        onClick={() => console.log("Téléchargement...")}
+                    />
+                )}
             </div>
 
             {/* Section de droite : Titre + bouton */}
-            <div className="flex flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-startw-full">
+            <div className="flex flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-start w-full">
                 <header className="flex flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-start w-full mb-7">
                     <h1
                         className="m-0 text-5xl md:text-7xl font-bold text-white break-words w-full"
@@ -72,6 +78,15 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                     </h1>
 
                 </header>
+                {/* Déplacer le bouton uniquement sur petits écrans */}
+                {isSmallScreen && (
+                    <SelectedButton
+                        icon="pi pi-upload"
+                        classElem="mt-4 w-full"
+                        label="Télécharger le CV"
+                        onClick={() => console.log("Téléchargement...")}
+                    />
+                )}
                 <div className="mt-8 flex flex-wrap justify-content-around gap-3 w-full">
                     <SelectedButton
                         classElem="flex-grow-1 sm:w-auto w-full toggle"
