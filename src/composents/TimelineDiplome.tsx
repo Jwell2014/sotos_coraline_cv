@@ -13,6 +13,8 @@ interface Item {
     entreprise?: string;
     description?: string[];
     realisations?: string[];
+    organization?: string;
+    equivalent?: string;
 }
 
 interface TimelineDiplomeProps {
@@ -35,23 +37,25 @@ const TimelineDiplome: React.FC<TimelineDiplomeProps> = ({ items }) => {
             <Card className='border-3' style={{ borderColor: item.color }} title={item.status ? item.status : item.poste} subTitle={item.date}>
                 {item.icon && <i className={item.icon}></i>}
                 {item.entreprise && <p className='font-bold'>{item.entreprise}</p>}
+                {item.organization && <p className="font-bold">{item.organization}</p>}
+                {item.equivalent && <p className="font-bold">{item.equivalent}</p>}
 
                 {item.description &&
                     <>
-                        <p>Description</p>
+                        <p className='underline'>Description</p>
                         <ul>
                             {item.description.map((desc, index) => (
-                                <ol key={index}>{desc}</ol>
+                                <li key={index}>{desc}</li>
                             ))}
                         </ul>
                     </>
                 }
                 {item.realisations &&
                     <>
-                        <p>Réalisations</p>
+                        <p className='underline'>Réalisations</p>
                         <ul>
                             {item.realisations.map((real, index) => (
-                                <ol key={index}>{real}</ol>
+                                <li key={index}>{real}</li>
                             ))}
                         </ul>
                     </>
@@ -61,9 +65,54 @@ const TimelineDiplome: React.FC<TimelineDiplomeProps> = ({ items }) => {
     };
 
     return (
-        <div className="card mb-8">
-            <Timeline value={items} align="alternate" className="customized-timeline" marker={customizedMarker} content={customizedContent} />
-        </div>
+        <>
+            {/* Timeline pour les moyens et grands écrans */}
+            <div className="hidden sm:block">
+                <div className="card mb-8">
+                    <Timeline value={items} align="alternate" className="customized-timeline" marker={customizedMarker} content={customizedContent} />
+                </div>
+            </div>
+
+            {/* Liste simple pour les petits écrans */}
+            <div className="block sm:hidden">
+                <div className="flex flex-column gap-4">
+                    {items.map((item, index) => (
+                        <Card
+                            key={index}
+                            className="border-3 w-full"
+                            style={{ borderColor: item.color }}
+                            title={item.status ? item.status : item.poste}
+                            subTitle={item.date}
+                        >
+                            {item.entreprise && <p className="font-bold">{item.entreprise}</p>}
+                            {item.organization && <p className="font-bold">{item.organization}</p>}
+                            {item.equivalent && <p className="font-bold">{item.equivalent}</p>}
+
+                            {item.description &&
+                                <>
+                                    <p className='underline'>Description</p>
+                                    <ul>
+                                        {item.description.map((desc, i) => (
+                                            <li key={i}>{desc}</li>
+                                        ))}
+                                    </ul>
+                                </>
+                            }
+                            {item.realisations &&
+                                <>
+                                    <p className='underline'>Réalisations</p>
+                                    <ul>
+                                        {item.realisations.map((real, i) => (
+                                            <li key={i}>{real}</li>
+                                        ))}
+                                    </ul>
+                                </>
+                            }
+                        </Card>
+                    ))}
+                </div>
+            </div>
+        </>
     )
 }
 

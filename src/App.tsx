@@ -20,7 +20,8 @@ const App: React.FC = () => {
   const [isOpen, setIsOpen] = useState(Boolean);
   const [items, setItems] = useState([{}]);
   const [onClickValue, setOnClickValue] = useState("");
-  const [visible, setVisible] = useState<boolean>(false);
+  const [isPortfolioVisible, setPortfolioVisibility] = useState<boolean>(false);
+  const [isContactVisible, setContactVisibility] = useState<boolean>(false);
   const [visibleContact, setVisibleContact] = useState<boolean>(false);
 
 
@@ -130,33 +131,74 @@ const App: React.FC = () => {
       <div className="flex flex-wrap justify-content-center gap-3 mx-4 mb-6">
         <SelectedButton
           icon="pi pi-linkedin"
-          classElem="flex-grow-1 sm:w-auto w-full mt-5"
+          classElem="flex-grow-1 border-2 border-indigo-500 sm:w-auto w-full mt-5"
           label="LinkedIn"
           onClick={() => window.open('https://www.linkedin.com/in/coraline-sotos-72bb7512a/', '_blank')}
         />
         <SelectedButton
           icon="pi pi-github"
-          classElem="flex-grow-1 sm:w-auto w-full mt-5"
+          classElem="flex-grow-1 border-2 border-cyan-500 sm:w-auto w-full mt-5"
           label="GitHub"
           onClick={() => window.open('https://github.com/Jwell2014', '_blank')}
         />
         <SelectedButton
           icon="pi pi-folder"
-          classElem="flex-grow-1 sm:w-auto w-full mt-5"
+          classElem="flex-grow-1 border-2 border-purple-500 sm:w-auto w-full mt-5"
           label="PorteFolio"
-          onClick={() => setVisible(true)}
+          onClick={() => setPortfolioVisibility(true)}
+        />
+        <SelectedButton
+          icon="pi pi-folder"
+          classElem="flex-grow-1 border-2 border-blue-500 sm:w-auto w-full mt-5"
+          label="Contact"
+          onClick={() => setContactVisibility(true)}
         />
       </div>
 
       <div className="grid">
-        <Dialog header="✨ Mon Portfolio est en Construction ! ✨" visible={visible} style={{ width: '60vw' }} onHide={() => { if (!visible) return; setVisible(false); }}>
-          <p className="m-0">
-            Bonjour et merci pour votre visite !<br /><br />
-            Je travaille actuellement à la création d’un portfolio qui mettra en lumière mes compétences, mes projets et mes réalisations.<br />
-            Ce sera un espace unique où vous pourrez découvrir mon travail sous son meilleur jour. 🌟<br /><br />
-            Le portfolio sera bientôt prêt, alors restez à l’écoute ! En attendant, n’hésitez pas à me contacter si vous souhaitez en savoir plus sur mes projets ou collaborer avec moi. 🙌<br /><br />
-            Merci pour votre patience et votre compréhension ! 😊
-          </p>
+        <Dialog header={isPortfolioVisible ? "✨ Mon Portfolio est en Construction ! ✨" : "Contact"} visible={isPortfolioVisible || isContactVisible} style={{ width: '60vw' }} onHide={() => {
+          if (isPortfolioVisible) setPortfolioVisibility(false);
+          if (isContactVisible) setContactVisibility(false);
+        }}>
+          {isPortfolioVisible && (
+            <>
+              <p className="m-0">
+                Bonjour et merci pour votre visite !<br /><br />
+                Je travaille actuellement à la création d’un portfolio qui mettra en lumière mes compétences, mes projets et mes réalisations.<br />
+                Ce sera un espace unique où vous pourrez découvrir mon travail sous son meilleur jour. 🌟<br /><br />
+                Le portfolio sera bientôt prêt, alors restez à l’écoute ! En attendant, n’hésitez pas à me contacter si vous souhaitez en savoir plus sur mes projets ou collaborer avec moi. 🙌<br /><br />
+                Merci pour votre patience et votre compréhension ! 😊
+              </p>
+              <p>Envie de jeter un coup d'œil à l'avancement ?<br /> Découvrez une version préliminaire de mon portfolio en cliquant ci-dessous.</p>
+              <SelectedButton icon="pi pi-eye" classElem="mt-5" label="Voir l'avancement" onClick={() => window.open('https://portfolio-tau-two-22.vercel.app/', '_blank')} />
+            </>
+          )}
+          {isContactVisible && (
+            <>
+              <p className="m-0">
+                Vous souhaitez me contacter pour discuter d’un projet, d’une collaboration ou simplement pour me dire bonjour ?<br />
+                N’hésitez pas à m’envoyer un message en m’envoyant un e-mail à l’adresse suivante :<br /><br />
+                <a
+                  href="mailto:sotoscoraline@gmail.com"
+                  className="text-primary underline hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  sotoscoraline@gmail.com
+                </a>
+              </p>
+              <p>Je vous répondrai dans les plus brefs délais !</p>
+              <p>Vous pouvez également me contacter par téléphone au numéro suivant :</p>
+              <p>
+                <a
+                  href="tel:+41778133367"
+                  className="text-primary underline hover:underline"
+                >
+                  +41 77 813 33 67
+                </a>
+              </p>
+            </>
+          )}
         </Dialog>
       </div>
     </div>
