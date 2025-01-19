@@ -71,13 +71,15 @@ const App: React.FC = () => {
       </div>
       {visibleContact && (
         <>
-          <div className="flex justify-content-center align-items-center w-full ">
-            <div className="card w-7 p-4">
-              <Fieldset className="flex flex-column justify-content-center align-items-center gap-4"
-                legend={legendTemplate} >
-                <div className="flex gap-4 w-full" >
+          <div className="flex justify-content-center align-items-center w-full">
+            <div className="card w-full md:w-8 sm:w-full p-4">
+              <Fieldset
+                className="flex flex-column justify-content-center align-items-center gap-6"
+                legend={legendTemplate}
+              >
+                <div className="flex flex-wrap md:flex-nowrap gap-6 w-full">
                   {/* Première colonne */}
-                  <div className="flex flex-column justify-content-start align-items-start w-1/2 text-start">
+                  <div className="flex flex-column justify-content-start align-items-start w-full md:w-12 text-start">
                     <h4>À propos de moi</h4>
                     <p className="m-0">
                       Développeuse full-stack avec une expertise en Java et React,<br />
@@ -90,24 +92,36 @@ const App: React.FC = () => {
                   </div>
 
                   {/* Deuxième colonne */}
-                  <div className="flex flex-column justify-content-start align-items-start w-1/2 text-start">
+                  <div className="flex flex-column justify-content-start align-items-start w-full md:w-6 text-start">
                     <h4>Contact</h4>
-                    <h5 className='m-0'>Mail</h5>
-                    <a href="mailto:sotoscoraline@gmail.com" className="text-primary underline hover:underline" target="_blank" rel="noopener noreferrer">
+                    <h5 className="m-0">Mail</h5>
+                    <a
+                      href="mailto:sotoscoraline@gmail.com"
+                      className="text-primary underline hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       sotoscoraline@gmail.com
                     </a>
-                    <h5 className='mb-0'>Téléphone</h5>
+                    <h5 className="mb-0">Téléphone</h5>
                     <p className="m-0">
-                      <a href="tel:+41778133367" className="text-primary underline hover:underline">+41 77 813 33 67</a>
+                      <a
+                        href="tel:+41778133367"
+                        className="text-primary underline hover:underline"
+                      >
+                        +41 77 813 33 67
+                      </a>
                     </p>
                   </div>
-
-
-
                 </div>
               </Fieldset>
             </div>
           </div>
+
+
+
+
+
         </>
       )
       }
