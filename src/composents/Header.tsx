@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                 </header>
                 <div className="mt-8 flex flex-wrap justify-content-around gap-3 w-full">
                     <SelectedButton
-                        classElem="flex-grow-1 sm:w-auto w-full"
+                        classElem="flex-grow-1 sm:w-auto w-full toggle"
                         icon="pi pi-graduation-cap"
                         label="Diplômes & Formations"
                         onClick={(event: { target: { value: string } }) => onClickSelectButton(event)}

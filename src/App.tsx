@@ -76,7 +76,7 @@ const App: React.FC = () => {
       {visibleContact && (
         <>
           <div className="flex justify-content-center align-items-center w-full">
-            <div className="card w-full md:w-8 sm:w-full p-4">
+            <div className="card w-full p-4">
               <Fieldset
                 className="flex flex-column justify-content-center align-items-center gap-6"
                 legend={legendTemplate}
@@ -84,39 +84,77 @@ const App: React.FC = () => {
                 <div className="flex flex-wrap md:flex-nowrap gap-6 w-full">
                   {/* Première colonne */}
                   <div className="flex flex-column justify-content-start align-items-start w-full md:w-12 text-start">
-                    <h4>À propos de moi</h4>
-                    <p className="m-0">
-                      Développeuse full-stack avec une expertise en Java et React,<br />
-                      accompagnées d’une solide maîtrise des bonnes pratiques Agile,<br />
-                      passionnée par la conception de solutions performantes et intuitives.<br />
-                      Forte d’une expérience en gestion de projets complexes,<br />
-                      je combine compétences techniques et créativité<br />
-                      pour répondre aux besoins des entreprises.
+                    <h4>À Propos De Moi</h4>
+                    <p>
+                      Développeuse full-stack spécialisée en Java et React, je possède une solide expertise dans la création
+                      d'applications performantes et intuitives. Mon expérience inclut également le développement et l'intégration
+                      de solutions utilisant l'intelligence artificielle pour optimiser les processus et améliorer les performances.
+                      <br /><br />
+                      Mon expérience m'a permis de maîtriser les bonnes pratiques Agile, en mettant l'accent sur la collaboration
+                      et l'adaptabilité pour garantir le succès des projets.
+                      <br /><br />
+                      Passionnée par l'innovation, je m'efforce de concevoir des solutions sur mesure, alliant performance technique,
+                      intelligence artificielle, et expérience utilisateur optimale. J'ai développé une aptitude à résoudre des
+                      problématiques complexes grâce à une analyse approfondie et une gestion rigoureuse des projets.
+                      <br /><br />
+                      Avec une expérience significative en gestion de projets complexes, je suis capable de coordonner efficacement
+                      des équipes multidisciplinaires, tout en respectant les délais et les exigences techniques. Ma créativité et
+                      mes compétences techniques me permettent d'apporter des solutions novatrices adaptées aux besoins des entreprises.
+                      <br /><br />
+                      En veille constante sur les nouvelles technologies, y compris l'IA, je m'engage à rester à la pointe des outils
+                      et des méthodologies pour offrir des solutions robustes, durables, et adaptées aux défis actuels.
                     </p>
                   </div>
 
                   {/* Deuxième colonne */}
                   <div className="flex flex-column justify-content-start align-items-start w-full md:w-6 text-start">
-                    <h4>Contact</h4>
-                    <h5 className="m-0">Mail</h5>
-                    <a
-                      href="mailto:sotoscoraline@gmail.com"
-                      className="text-primary underline hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      sotoscoraline@gmail.com
-                    </a>
-                    <h5 className="mb-0">Téléphone</h5>
-                    <p className="m-0">
-                      <a
-                        href="tel:+41778133367"
-                        className="text-primary underline hover:underline"
-                      >
-                        +41 77 813 33 67
-                      </a>
-                    </p>
+                    <h4 className="mb-4">Mes Hobbies</h4>
+                    <ul className="list-none m-0 p-0">
+                      {[
+                        {
+                          icon: "pi pi-desktop",
+                          title: "Développement informatique",
+                          description: "Explorer de nouvelles technologies, développer des projets et trouver des solutions créatives à des problématiques techniques.",
+                        },
+                        {
+                          icon: "pi pi-headphones",
+                          title: "Création musicale",
+                          description: "Composer des morceaux, expérimenter de nouveaux styles et partager ma passion pour la musique.",
+                        },
+                        {
+                          icon: "pi pi-flag",
+                          title: "Sport",
+                          description: "Maintenir un mode de vie actif avec des activités comme la randonnée, le fitness, ou des sports collectifs.",
+                        },
+                        {
+                          icon: "pi pi-palette",
+                          title: "Jeux de stratégie",
+                          description: "Développer des compétences en résolution de problèmes et planification à travers des jeux captivants.",
+                        },
+                      ].map((hobby, index) => (
+                        <li
+                          key={index}
+                          className="flex align-items-start gap-3 mb-3"
+                          style={{
+                            alignItems: "flex-start", // Assure un alignement parfait du texte et de l'icône
+                          }}
+                        >
+                          <i
+                            className={`${hobby.icon} text-primary text-2xl flex-shrink-0`}
+                            style={{
+                              minWidth: "2rem",
+                              textAlign: "center",
+                            }}
+                          ></i>
+                          <div>
+                            <span className="font-bold block">{hobby.title}</span>
+                            <span>{hobby.description}</span>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+
                 </div>
               </Fieldset>
             </div>
@@ -156,7 +194,7 @@ const App: React.FC = () => {
       </div>
 
       <div className="grid">
-        <Dialog className='sm:w-8' header={isPortfolioVisible ? "✨ Mon Portfolio est en Construction ! ✨" : "Contact"} visible={isPortfolioVisible || isContactVisible} onHide={() => {
+        <Dialog className='sm:w-8' header={isPortfolioVisible ? "Mon Portfolio est en Construction !" : "Contact"} visible={isPortfolioVisible || isContactVisible} onHide={() => {
           if (isPortfolioVisible) setPortfolioVisibility(false);
           if (isContactVisible) setContactVisibility(false);
         }}>
