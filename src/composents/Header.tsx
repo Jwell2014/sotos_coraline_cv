@@ -48,8 +48,8 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
             </div>
 
             {/* Section de droite : Titre + bouton */}
-            <div className="flex flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-start w-full">
-                <header className="flex flex-column justify-content-start align-items-start w-full mb-6 md:justify-content-start md:align-items-start md:text-start">
+            <div className="flex -mt-6 flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-start w-full">
+                <header className="flex flex-column justify-content-start align-items-start w-full mb-8 md:justify-content-start md:align-items-start md:text-start">
                     <h1
                         className="m-0 text-5xl md:text-7xl font-bold text-white break-words w-full"
                         style={{
@@ -82,11 +82,12 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                 {isSmallScreen && (
                     <SelectedButton
                         icon="pi pi-upload"
-                        classElem="-mt-5 w-full"
+                        classElem="-mt-7 w-full"
                         label="Télécharger le CV"
                         onClick={() => console.log("Téléchargement...")}
                     />
                 )}
+                <div className='mt-4'></div>
                 <div className="mt-8 flex flex-wrap justify-content-around gap-3 w-full">
                     <SelectedButton
                         classElem="flex-grow-1 sm:w-auto w-full toggle"
