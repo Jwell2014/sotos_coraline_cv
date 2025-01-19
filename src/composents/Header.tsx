@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                 {!isSmallScreen && (
                     <SelectedButton
                         icon="pi pi-upload"
-                        classElem="mt-4"
+                        classElem="mt-3"
                         label="Télécharger le CV"
                         onClick={() => console.log("Téléchargement...")}
                     />
@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
 
             {/* Section de droite : Titre + bouton */}
             <div className="flex flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-start w-full">
-                <header className="flex flex-column justify-content-start align-items-start md:justify-content-start md:align-items-start md:text-start w-full mb-7">
+                <header className="flex flex-column justify-content-start align-items-start w-full mb-6 md:justify-content-start md:align-items-start md:text-start">
                     <h1
                         className="m-0 text-5xl md:text-7xl font-bold text-white break-words w-full"
                         style={{
@@ -82,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                 {isSmallScreen && (
                     <SelectedButton
                         icon="pi pi-upload"
-                        classElem="mt-4 w-full"
+                        classElem="w-full"
                         label="Télécharger le CV"
                         onClick={() => console.log("Téléchargement...")}
                     />
