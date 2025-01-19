@@ -82,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                 {isSmallScreen && (
                     <SelectedButton
                         icon="pi pi-upload"
-                        classElem="w-full"
+                        classElem="-mt-5 w-full"
                         label="Télécharger le CV"
                         onClick={() => console.log("Téléchargement...")}
                     />
