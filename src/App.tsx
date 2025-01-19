@@ -156,7 +156,7 @@ const App: React.FC = () => {
       </div>
 
       <div className="grid">
-        <Dialog header={isPortfolioVisible ? "✨ Mon Portfolio est en Construction ! ✨" : "Contact"} visible={isPortfolioVisible || isContactVisible} style={{ width: '60vw' }} onHide={() => {
+        <Dialog className='sm:w-8' header={isPortfolioVisible ? "✨ Mon Portfolio est en Construction ! ✨" : "Contact"} visible={isPortfolioVisible || isContactVisible} onHide={() => {
           if (isPortfolioVisible) setPortfolioVisibility(false);
           if (isContactVisible) setContactVisibility(false);
         }}>
