@@ -32,12 +32,15 @@ const App: React.FC = () => {
     if (onClickValue === "Diplômes & Formations") {
       setIsOpen(true);
       setItems(diplomes);
+      setVisibleContact(false);
     } else if (onClickValue === "Expériences Professionnelles") {
       setIsOpen(true);
       setItems(experiences);
+      setVisibleContact(false);
     } else if (onClickValue === "En Savoir Plus") {
-      setIsOpen(true);
-      setItems([{}]);
+      setIsOpen(false);
+      setOnClickValue("");
+      setVisibleContact(true);
     } else {
       setIsOpen(false);
     }
@@ -60,7 +63,7 @@ const App: React.FC = () => {
   return (
     <div>
       <div>
-        <Header onClickValue={setOnClickValue} onClickContact={setVisibleContact} />
+        <Header onClickValue={setOnClickValue} />
 
       </div>
       <div className={isOpen ? "" : "hidden"} >
