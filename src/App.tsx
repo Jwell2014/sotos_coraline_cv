@@ -13,12 +13,16 @@ import TimelineDiplome from './composents/TimelineDiplome';
 import { Button } from 'primereact/button';
 import SelectedButton from './composents/Button';
 import { Dialog } from 'primereact/dialog';
+import { Fieldset } from 'primereact/fieldset';
+
 
 const App: React.FC = () => {
   const [isOpen, setIsOpen] = useState(Boolean);
   const [items, setItems] = useState([{}]);
   const [onClickValue, setOnClickValue] = useState("");
   const [visible, setVisible] = useState<boolean>(false);
+  const [visibleContact, setVisibleContact] = useState<boolean>(false);
+
 
 
 
@@ -42,12 +46,21 @@ const App: React.FC = () => {
   const handleClose = () => {
     setIsOpen(false);
     setOnClickValue(""); // Réinitialise onClickValue pour permettre un reclique
+    setVisibleContact(false);
   };
 
+  const legendTemplate = (
+    <div className="flex align-items-center gap-2 px-2">
+      <div className="m-0">
+        <Button icon="pi pi-times" size="small" rounded outlined severity="info" aria-label="Cancel" onClick={handleClose} />
+      </div>
+      <span className="font-bold ml-3">En Savoir Plus</span>
+    </div>
+  );
   return (
     <div>
       <div>
-        <Header onClickValue={setOnClickValue} />
+        <Header onClickValue={setOnClickValue} onClickContact={setVisibleContact} />
 
       </div>
       <div className={isOpen ? "" : "hidden"} >
@@ -56,6 +69,49 @@ const App: React.FC = () => {
         </div>
         <TimelineDiplome items={items} />
       </div>
+      {visibleContact && (
+        <>
+          <div className="flex justify-content-center align-items-center w-full ">
+            <div className="card w-7 p-4">
+              <Fieldset className="flex flex-column justify-content-center align-items-center gap-4"
+                legend={legendTemplate} >
+                <div className="flex gap-4 w-full" >
+                  {/* Première colonne */}
+                  <div className="flex flex-column justify-content-start align-items-start w-1/2 text-start">
+                    <h4>À propos de moi</h4>
+                    <p className="m-0">
+                      Développeuse full-stack avec une expertise en Java et React,<br />
+                      accompagnées d’une solide maîtrise des bonnes pratiques Agile,<br />
+                      passionnée par la conception de solutions performantes et intuitives.<br />
+                      Forte d’une expérience en gestion de projets complexes,<br />
+                      je combine compétences techniques et créativité<br />
+                      pour répondre aux besoins des entreprises.
+                    </p>
+                  </div>
+
+                  {/* Deuxième colonne */}
+                  <div className="flex flex-column justify-content-start align-items-start w-1/2 text-start">
+                    <h4>Contact</h4>
+                    <h5 className='m-0'>Mail</h5>
+                    <a href="mailto:sotoscoraline@gmail.com" className="text-primary underline hover:underline" target="_blank" rel="noopener noreferrer">
+                      sotoscoraline@gmail.com
+                    </a>
+                    <h5 className='mb-0'>Téléphone</h5>
+                    <p className="m-0">
+                      <a href="tel:+41778133367" className="text-primary underline hover:underline">+41 77 813 33 67</a>
+                    </p>
+                  </div>
+
+
+
+                </div>
+              </Fieldset>
+            </div>
+          </div>
+        </>
+      )
+      }
+
       <div className='px-4 py-6'>
         <CardList items={cardData} />
       </div>

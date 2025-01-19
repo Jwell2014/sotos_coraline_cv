@@ -5,9 +5,10 @@ import SelectedButton from './Button';
 
 interface HeaderProps {
     onClickValue: React.Dispatch<React.SetStateAction<string>>
+    onClickContact: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
+const Header: React.FC<HeaderProps> = ({ onClickValue, onClickContact }) => {
     const downloadCv = () => {
         const link = document.createElement('a');
         link.href = '/SOTOSCoralineCv.pdf';
@@ -24,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
         } else if (e.target.value === "Expériences Professionnelles") {
             onClickValue(e.target.value);
         } else {
-            onClickValue(e.target.value);
+            onClickContact(true);
         }
     }
 
