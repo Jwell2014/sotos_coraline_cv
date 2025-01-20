@@ -163,31 +163,31 @@ const App: React.FC = () => {
       )
       }
 
-      <div className='px-4 py-6'>
+      <div className='px-4 py-8'>
         <CardList items={cardData} />
       </div>
       <div className="flex flex-wrap justify-content-center gap-3 mx-4 mb-6">
         <SelectedButton
           icon="pi pi-linkedin"
-          classElem="flex-grow-1 border-2 border-indigo-500 sm:w-auto w-full mt-5"
+          classElem="flex-grow-1 border-2 border-indigo-500 sm:w-auto w-full"
           label="LinkedIn"
           onClick={() => window.open('https://www.linkedin.com/in/coraline-sotos-72bb7512a/', '_blank')}
         />
         <SelectedButton
           icon="pi pi-github"
-          classElem="flex-grow-1 border-2 border-cyan-500 sm:w-auto w-full mt-5"
+          classElem="flex-grow-1 border-2 border-cyan-500 sm:w-auto w-full"
           label="GitHub"
           onClick={() => window.open('https://github.com/Jwell2014', '_blank')}
         />
         <SelectedButton
           icon="pi pi-folder"
-          classElem="flex-grow-1 border-2 border-purple-500 sm:w-auto w-full mt-5"
+          classElem="flex-grow-1 border-2 border-purple-500 sm:w-auto w-full"
           label="PorteFolio"
           onClick={() => setPortfolioVisibility(true)}
         />
         <SelectedButton
           icon="pi pi-folder"
-          classElem="flex-grow-1 border-2 border-blue-500 sm:w-auto w-full mt-5"
+          classElem="flex-grow-1 border-2 border-blue-500 sm:w-auto w-full"
           label="Contact"
           onClick={() => setContactVisibility(true)}
         />
