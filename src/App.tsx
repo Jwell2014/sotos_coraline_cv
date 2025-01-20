@@ -169,25 +169,25 @@ const App: React.FC = () => {
       <div className="flex flex-wrap justify-content-center gap-3 mx-4 mb-6">
         <SelectedButton
           icon="pi pi-linkedin"
-          classElem="flex-grow-1 border-2 border-indigo-500 sm:w-auto w-full"
+          classElem="flex-grow-1 border-2 border-indigo-500 hover:bg-indigo-500 sm:w-auto w-full"
           label="LinkedIn"
           onClick={() => window.open('https://www.linkedin.com/in/coraline-sotos-72bb7512a/', '_blank')}
         />
         <SelectedButton
           icon="pi pi-github"
-          classElem="flex-grow-1 border-2 border-cyan-500 sm:w-auto w-full"
+          classElem="flex-grow-1 border-2 border-cyan-500 hover:bg-cyan-500 sm:w-auto w-full"
           label="GitHub"
           onClick={() => window.open('https://github.com/Jwell2014', '_blank')}
         />
         <SelectedButton
           icon="pi pi-folder"
-          classElem="flex-grow-1 border-2 border-purple-500 sm:w-auto w-full"
+          classElem="flex-grow-1 border-2 border-purple-500 hover:bg-purple-500 sm:w-auto w-full"
           label="PorteFolio"
           onClick={() => setPortfolioVisibility(true)}
         />
         <SelectedButton
-          icon="pi pi-folder"
-          classElem="flex-grow-1 border-2 border-blue-500 sm:w-auto w-full"
+          icon="pi pi-envelope"
+          classElem="flex-grow-1 border-2 border-blue-500 hover:bg-blue-500  sm:w-auto w-full"
           label="Contact"
           onClick={() => setContactVisibility(true)}
         />
@@ -216,6 +216,7 @@ const App: React.FC = () => {
               <p className="m-0">
                 Vous souhaitez me contacter pour discuter d’un projet, d’une collaboration ou simplement pour me dire bonjour ?<br />
                 N’hésitez pas à m’envoyer un message en m’envoyant un e-mail à l’adresse suivante :<br /><br />
+                <i className="pi pi-at text-primary mr-2"></i>
                 <a
                   href="mailto:sotoscoraline@gmail.com"
                   className="text-primary underline hover:underline"
@@ -228,6 +229,7 @@ const App: React.FC = () => {
               <p>Je vous répondrai dans les plus brefs délais !</p>
               <p>Vous pouvez également me contacter par téléphone au numéro suivant :</p>
               <p>
+                <i className="pi pi-phone text-primary mr-2"></i>
                 <a
                   href="tel:+41778133367"
                   className="text-primary underline hover:underline"

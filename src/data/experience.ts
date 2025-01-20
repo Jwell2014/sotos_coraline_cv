@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
         entreprise: "Indépendante",
         description: [
             "Création de sites vitrines et e-commerce : planification, conception, développement, et mise en ligne.",
-            "Technologies utilisées : HTML, CSS, JavaScript, WordPress.",
+            "Technologies utilisées : HTML, CSS, JavaScript, WordPress, Figma, et Photoshop.",
             "Réalisation de cahiers des charges, maquettes, et logos pour les clients."
         ],
         color: "#4CAF50",
@@ -56,7 +56,7 @@ export const experiences: Experience[] = [
     {
         poste: "Auto-entrepreneuse dans l’Événementiel Musical",
         date: "2016 - 2020",
-        entreprise: "Indépendante",
+        entreprise: "Indépendante France/Espagne/Suisse",
         description: [
             "Organisation et animation d’événements musicaux publics et privés.",
             "Conception de supports visuels pour la promotion (logos, flyers, publicités).",
@@ -68,7 +68,7 @@ export const experiences: Experience[] = [
     {
         poste: "Responsable de Boutique",
         date: "2014 - 2016",
-        entreprise: "Diyanno, Lyon",
+        entreprise: "Pivano, Lyon",
         description: [
             "Gestion de la boutique, des fournisseurs, et de l'équipe.",
             "Mise en place de stratégies de vente et développement commercial.",
