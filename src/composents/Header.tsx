@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                         icon="pi pi-upload"
                         classElem=""
                         label="Télécharger le CV"
-                        onClick={() => console.log("Téléchargement...")}
+                        onClick={() => downloadCv()}
                     />
                 )}
             </div>
@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                         icon="pi pi-upload"
                         classElem="-mt-6 w-full"
                         label="Télécharger le CV"
-                        onClick={() => console.log("Téléchargement...")}
+                        onClick={() => downloadCv()}
                     />
                 )}
                 <div className="mt-7 flex flex-wrap justify-content-around gap-3 w-full">
