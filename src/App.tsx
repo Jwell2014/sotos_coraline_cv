@@ -234,7 +234,7 @@ const App: React.FC = () => {
                   href="tel:+41778133367"
                   className="text-primary underline hover:underline"
                 >
-                  +41 77 813 33 67
+                  +41 76 839 46 70
                 </a>
               </p>
             </>
