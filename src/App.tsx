@@ -208,7 +208,7 @@ const App: React.FC = () => {
                 Merci pour votre patience et votre compréhension ! 😊
               </p>
               <p>Envie de jeter un coup d'œil à l'avancement ?<br /> Découvrez une version préliminaire de mon portfolio en cliquant ci-dessous.</p>
-              <SelectedButton icon="pi pi-eye" classElem="mt-5" label="Voir l'avancement" onClick={() => window.open('https://https://portefolio-cs.vercel.app/', '_blank')} />
+              <SelectedButton icon="pi pi-eye" classElem="mt-5" label="Voir l'avancement" onClick={() => window.open('https://portefolio-cs.vercel.app/', '_blank')} />
             </>
           )}
           {isContactVisible && (
