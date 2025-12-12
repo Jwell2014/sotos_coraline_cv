@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                                 letterSpacing: '0.2rem',
                             }}
                         >
-                            CONCEPTEUR         DÉVELOPPEUR
+                            Développeuse Full-Stack
                         </h1>
 
                         <h1
@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                                 letterSpacing: '0.15rem',
                             }}
                         >
-                            D'APPLICATIONS
+                            PHP / Symfony
                         </h1>
                         <h1
                             className="m-0 text-4xl md:text-6xl font-bold text-white break-words w-full"
@@ -68,7 +68,7 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                                 letterSpacing: '0.15rem',
                             }}
                         >
-                            EN ENVIRONNEMENT DEVOPS
+                            React /TypeScript
                         </h1>
 
                     </header>
