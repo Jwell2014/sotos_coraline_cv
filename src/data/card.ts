@@ -9,7 +9,7 @@ export const cardData = [
         content: ['React', 'Node.js', 'Next.js', 'Express.js', 'Primereact', 'Primeflex', 'Tailwind CSS', 'Spring Boot', 'Vue.js', 'Symfony'],
     },
     {
-        title: 'Bases de données et langages associés',
+        title: 'Bases de données',
         content: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL'],
     },
     {
