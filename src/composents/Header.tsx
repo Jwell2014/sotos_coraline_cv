@@ -14,8 +14,8 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
 
     const downloadCv = () => {
         const link = document.createElement('a');
-        link.href = '/CVcoralineSotos.pdf';
-        link.download = 'CVcoralineSotos.pdf';
+        link.href = '/CV_SOTOS_C';
+        link.download = 'CV_SOTOS_C.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
