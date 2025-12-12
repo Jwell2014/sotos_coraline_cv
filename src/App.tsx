@@ -86,7 +86,7 @@ const App: React.FC = () => {
                   <div className="flex flex-column justify-content-start align-items-start w-full md:w-12 text-start">
                     <h4>À Propos De Moi</h4>
                     <p>
-                      Développeuse full-stack spécialisée en Java et React, je possède une solide expertise dans la création
+                      Développeuse full-stack spécialisée en PHP / Symfony React /TypeScript, je possède une solide expertise dans la création
                       d'applications performantes et intuitives. Mon expérience inclut également le développement et l'intégration
                       de solutions utilisant l'intelligence artificielle pour optimiser les processus et améliorer les performances.
                       <br /><br />
