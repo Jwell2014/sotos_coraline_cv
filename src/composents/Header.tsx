@@ -14,8 +14,8 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
 
     const downloadCv = () => {
         const link = document.createElement('a');
-        link.href = '/CV_SOTOS_C.pdf';
-        link.download = 'CV_SOTOS_C.pdf';
+        link.href = '/SOTOS_C_CV.pdf';
+        link.download = 'SOTOS_C_CV.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -51,24 +51,6 @@ const Header: React.FC<HeaderProps> = ({ onClickValue }) => {
                             }}
                         >
                             Développeuse Full-Stack
-                        </h1>
-
-                        <h1
-                            className="m-0 text-4xl md:text-6xl font-bold text-white break-words w-full"
-                            style={{
-                                letterSpacing: '0.15rem',
-                            }}
-                        >
-                            PHP / Symfony
-                        </h1>
-                        <h1
-                            className="m-0 text-4xl md:text-6xl font-bold text-white break-words w-full"
-                            style={{
-                                wordSpacing: '0.1rem',
-                                letterSpacing: '0.15rem',
-                            }}
-                        >
-                            React /TypeScript
                         </h1>
 
                     </header>
